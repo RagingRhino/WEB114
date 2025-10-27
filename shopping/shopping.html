@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- Dylan Gregory  10/22/2025 -->
+ 
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <Title></Title>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #f4f4f9;
+                color: #333;
+                line-height: 1.6;
+                padding: 20px;
+            }
+
+            main {
+                max-width: 800px;
+                margin: auto;
+                background: white;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+
+            h1 {
+                font-size: 2em;
+                margin-bottom: 10px;
+                color: #2c3e50;
+            }
+
+            h2 {
+                font-size: 1.5em;
+                margin: 20px 0 10px;
+                color: #34495e;
+            }
+
+            h3 {
+                font-size: 1.2em;
+                margin-top: 20px;
+                color: #2980b9;
+            }
+
+            p {
+                margin: 10px 0;
+            }
+
+            strong {
+                color: #e74c3c;
+            }
+
+            code {
+                background: #eee;
+                padding: 2px 4px;
+                border-radius: 4px;
+                font-family: Consolas, monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>Project 3: Dylan Gregory</h1>
+            <h2>Questions:</h2>
+            <h3>1. Name a situation where you would need to create an "if" statement.</h3>
+            <p>There are many situations where an "if" statement is necissary.</p>
+            <p>If one wanted to have different outputs depending on an answer. </p>
+                <p>Ex. dependent on the number value of a grade the different letters would be assigned. (though a case statement would better achieve this)</p>
+                <p>Using the same grade value above you could use an if statement to display pass or fail.</p>
+            <h3>2. When comparing values, in what data type is the result stored?</h3>
+            <p>The data type is boolean (true or false). If ___ is <strong>TRUE</strong> then ...</p>
+        </main>
+
+        <script>
+            let total = prompt("How much did you spend?");
+            confirm(`$${total} total? Click OK to continue!`);
+
+            if ( total >= 100) {
+                alert("20% off");
+            } else if ( total >= 50) {  
+                // Exercise #4 states "Use an if statement to check if total is greater than or equal to 75. If true, use an alert to show "10% off"." 
+                // However in #6 the example situations suggest that if 50 is entered it also displays '10% off' - I chose to make this edit to make outputs match.
+                alert("10% off");
+            } else {
+                alert("No discount");
+            }
+        </script>
+    </body>
+</html>
