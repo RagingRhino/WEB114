@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- Dylan Gregory 10-07-2025 -->
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Discount Calculator</title>
+    </head>
+    <body>
+        <h1>Shopping Cart Discount Calculator</h1>
+        <p>Open the console to see the results. (Press F12 or Ctrl+Shift+I)</p>
+
+        <script>
+            // Initialize variables
+            let keepAdding = true;
+            let itemName;
+            let itemPrice;
+            let total = 0;
+
+            // Loop to add items (using do-while)
+            do {
+            itemName = prompt("Enter item name (or 'done' to finish): ");
+
+            // check if the user typed "done"
+            if (itemName && itemName.toLowerCase() !== "done") {
+                itemPrice = prompt("Enter price for " + itemName + ": ");
+
+                // convert string input to a number
+                itemPrice = Number(itemPrice);
+
+                // check if the number is valid
+                if (!isNaN(itemPrice) && itemPrice > 0) {
+                    total += itemPrice; // add to total
+                } else {
+                    console.log("Invalid price entered. Please try again.");
+                }
+            } else {
+                keepAdding = false; // Exit loop when "done" is entered
+            }
+            } while (keepAdding);
+
+            // Check for discount and calculate final total (using if)
+            let discount = 0;
+            if (total > 100) {
+            discount = total * 0.2; // 20% discount
+            total = total - discount;
+            console.log("Discount applied: $", discount.toFixed(2));
+            }
+
+            // Display final total
+            console.log("Final total: $", total.toFixed(2));
+        </script>
+    </body>
+</html>
