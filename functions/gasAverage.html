@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<!-- Dylan Gregory  11-12-2025 -->
+
+<!-- The steps in the <script> section reflect the pseudocode steps 
+    and not the Project Steps, as I found it flowed more naturally 
+    than the Process steps which would be out of order. 
+    
+    I also chose to add a basic Styles
+    
+    I noticed in the Questions section your screenshot had 
+    "Click F12 to see the console messages." So i added some 
+    console.log() to show the data as it is entered.-->
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WEB 114 Functions Project</title>
+        <style>
+            /* Basic page layout */
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 2em;
+                background-color: #f9f9f9;
+                color: #333;
+                line-height: 1.6;
+            }
+
+            header {
+                text-align: center;
+                margin-bottom: 2em;
+            }
+
+            h1 {
+                color: #004d40;
+                text-align: center;
+            }
+
+            main {
+                max-width: 700px;
+                margin: 0 auto;
+                background-color: #fff;
+                padding: 1.5em;
+                border-radius: 8px;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            }
+
+            p {
+                margin-bottom: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+        </header>
+        <main>
+            <h1>What is the purpose of a Function?</h1>
+            <p>
+                The purpose of a function is to make it easy for a section of code to be repeatable if 
+                needed, and or group specific code by the 'function' it is intended to complete
+            </p>
+            <p>Press F12 to see the console messages.</p>
+        </main>
+        <script>
+            // 1. Declare a variable named entryCount and initialize it to 0.
+            // Create a variable named total = 0.
+            let entryCount = 0;
+            let total = 0;
+            let weeklyGas = 0;
+
+            // 2. Ask the user for their name and store it in a variable named username.
+            let username = prompt("Enter your name");
+            console.log(`Username: ${username}`);
+
+            // 3. Call a function called calcGasAvg() that will calculate the average gas total. (see below for function info) .
+            let gas = calcGasAvg();
+
+            // 4. Use a confirm message to display the user's name and their gas average (2 decimal places).
+            confirm(username + "'s average weekly gas bill is $" + gas.toFixed(2));
+
+            // 5. Also, use an if statement to show how many gas totals were entered.
+            if (entryCount === 0) {
+                confirm("No gas totals were entered.");
+                console.log(`# of Entries: ${entryCount}`);
+            } else if (entryCount === 1) {
+                confirm(`You entered ${entryCount} gas total.`)
+                console.log(`# of Entries: ${entryCount}`);
+            } else {
+                confirm(`You entered ${entryCount} gas totals.`);
+                console.log(`# of Entries: ${entryCount}`);
+            }
+
+            // Create a function called calcGasAvg() that uses this information.
+            function calcGasAvg() {
+                // Declare a local variable named averageGas.
+                let averageGas  = 0;
+
+                // Ask the user for their first weekly gas total or enter -1 to end.
+                weeklyGas = parseFloat(prompt("Enter your first weekly gas total (or -1 to end): "));
+
+                // While the weekly gas total is not -1:
+                while (weeklyGas !== -1) {
+                    // Add the total to running total.
+                    total += weeklyGas;
+
+                    // Increase count by 1.
+                    entryCount++;
+                    console.log(`Entry #${entryCount}: ${weeklyGas}`);
+
+                    // Ask again for another weekly total (-1 to end).
+                    weeklyGas = parseFloat(prompt("Enter next week's gas total (or -1 to end): "));
+                }
+
+                // Use an if statement to calculate the averageGas by dividing total / entryCount- else averageGas = 0.
+                if (entryCount > 0){
+                    averageGas = total / entryCount;
+                    console.log(`Total Gas: ${total.toFixed(2)}`);
+                    console.log(`Average Gas: ${averageGas.toFixed(2)}`);
+                } 
+
+                // Return averageGas.
+                return averageGas;
+            }
+                
+        </script>
+    </body>
+</html>
