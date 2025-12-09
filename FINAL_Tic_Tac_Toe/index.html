@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- Dylan Gregory  12-08-2025 -->
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tic Tac Toe</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Pokémon Tic Tac Toe</h1>
+            <p class="subtitle">
+                Pikachu (X) vs Pokéball (O)
+            </p>
+        </header>
+
+        <div id="startScreen">
+            <img src="images/pikachu.png" class="startImg">
+
+            <h2>Pokémon Tic Tac Toe</h2>
+
+            <div class="startButtons">
+                <button id="pvpBtn" class="modeBtn">Player vs Player</button>
+                <button id="cpuBtn" class="modeBtn">Player vs CPU</button>
+            </div>
+        </div>
+
+        <main>
+            <!-- Status message: whose turn, winner, etc. -->
+            <p id="status">Current Player: Pikachu (X)</p>
+
+            <!-- Game board -->
+            <div id="board" class="board">
+                <!-- 9 cells, we’ll use data-index in JavaScript -->
+                <button class="cell" data-index="0"></button>
+                <button class="cell" data-index="1"></button>
+                <button class="cell" data-index="2"></button>
+                <button class="cell" data-index="3"></button>
+                <button class="cell" data-index="4"></button>
+                <button class="cell" data-index="5"></button>
+                <button class="cell" data-index="6"></button>
+                <button class="cell" data-index="7"></button>
+                <button class="cell" data-index="8"></button>
+            </div>
+
+            <div class="controls">
+                <button id="resetBtn">Restart Game</button>
+                <button id="homeBtn">Home</button>
+            </div>
+        </main>
+        <footer>
+            <a href="https://www.flaticon.com/free-icons/pokemon" title="pokemon icons">Pokemon icons created by Those Icons - Flaticon</a>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
